@@ -33,7 +33,7 @@ class ConvoAI(Endpoint):
 
         api_key = settings.get("api_key") or ""
         header_authorization = r.headers.get("Authorization")
-        if api_key is not "":
+        if api_key != "":
             authorization = f"Bearer {api_key}"
             if authorization != header_authorization:
                 return Response("Unauthorized", status=401)
