@@ -149,7 +149,7 @@ class ConvoAI(Endpoint):
                     "params": tts_params
                 },
                 "asr": {
-                    "vendor": "agora",
+                    "vendor": "microsoft",
                     "language": "zh-CN"
                 },
                 "parameters": {
