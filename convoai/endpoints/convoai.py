@@ -157,7 +157,7 @@ class ConvoAI(Endpoint):
                 }
             }
         }
-        url = f"https://api-test.agora.io/cn/api/conversational-ai-agent/v2/projects/{agora_app_id}/join"
+        url = f"https://api.agora.io/api/conversational-ai-agent/v2/projects/{agora_app_id}/join"
 
         # raise Exception(json.dumps(data))
 
@@ -177,7 +177,7 @@ class ConvoAI(Endpoint):
         app_id = settings.get("agora_app_id")
         credentials = f"{settings.get('agora_restful_customer_id')}:{settings.get('agora_restful_customer_secret')}"
         encoded_credentials = base64.b64encode(credentials.encode("utf-8")).decode("utf-8")
-        url = f"https://api-test.agora.io/cn/api/conversational-ai-agent/v2/projects/{app_id}/agents/{agent_id}/leave"
+        url = f"https://api.agora.io/api/conversational-ai-agent/v2/projects/{app_id}/agents/{agent_id}/leave"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Basic {encoded_credentials}"
