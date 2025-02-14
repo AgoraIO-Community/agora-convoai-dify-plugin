@@ -1,6 +1,6 @@
 version: 0.0.1
 type: plugin
-author: Ethan
+author: plutoless
 name: convoai
 label:
   en_US: "Agora Conversational AI"
