@@ -18,7 +18,7 @@ class WebConvoAI(Endpoint):
         content_type = "text/html"
 
         if file.endswith(".js"):
-            content_type = "application/javascript"
+            content_type = "application/javascript; charset=UTF-8"
         elif file.endswith(".css"):
             content_type = "text/css; charset=UTF-8"
         elif file.endswith(".svg"):
@@ -28,7 +28,7 @@ class WebConvoAI(Endpoint):
             return Response("File is required", status=400)
 
 
-        with open(os.path.join(os.path.dirname(__file__), "web", "dist", file), "r") as f:
+        with open(os.path.join(os.path.dirname(__file__), "web", "dist", file), "r", encoding="utf-8") as f:
             return Response(
                 # f.read().replace("%%TIMESTAMP%%", f"{current_timestamp}"),
                 f.read(),
