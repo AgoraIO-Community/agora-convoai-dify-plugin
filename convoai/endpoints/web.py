@@ -28,7 +28,7 @@ class WebConvoAI(Endpoint):
             return Response("File is required", status=400)
 
 
-        with open(os.path.join(os.path.dirname(__file__), "web", "dist", file), "r", encoding="utf-8") as f:
+        with open(os.path.join(os.path.dirname(__file__), "web", "release", file), "r", encoding="utf-8") as f:
             return Response(
                 # f.read().replace("%%TIMESTAMP%%", f"{current_timestamp}"),
                 f.read(),

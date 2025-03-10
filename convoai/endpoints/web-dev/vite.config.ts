@@ -13,6 +13,6 @@ export default defineConfig({
   base: './',
   build: {
     assetsDir: '',       // Keep assets in the root of the output folder
-    outDir: '../web/dist',       // Output folder
+    outDir: '../web/release',       // Output folder
   }
 })
