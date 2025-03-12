@@ -117,7 +117,7 @@ class ConvoAI(Endpoint):
             current_timestamp = int(time.time())
             # Add 1 hour (3600 seconds)
             privilegeExpireTs = current_timestamp + 3600
-            agora_token = RtcTokenBuilder.buildTokenWithUid(agora_app_cert, agora_app_cert, channel, agent_rtc_uid, 1, privilegeExpireTs)
+            agora_token = RtcTokenBuilder.buildTokenWithUid(agora_app_id, agora_app_cert, channel, agent_rtc_uid, 1, privilegeExpireTs)
 
         # Define the data (payload)
         data = {

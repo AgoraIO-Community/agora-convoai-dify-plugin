@@ -1,7 +1,7 @@
 ## Agora Conversational AI
 
 **Author:** plutoless
-**Version:** 0.0.1
+**Version:** 0.0.3
 **Type:** extension
 
 ### Description
@@ -15,7 +15,7 @@ This extension provides an endpoint to make Dify agents work with Agora Conversa
 - **APP**
     The Dify App to turn into voice assistant, choose one from your agent library.
 - **Agora App ID**
-    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/).
+    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/). Note to enable the Agora Conversational AI service in the Agora Console.
 - **Agora RESTful Customer ID**
     The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/).
 - **Agora RESTful Customer Secret**
@@ -55,3 +55,46 @@ Replace `<file>` with `index.html`,
 Then you may navigate to following url to access the integrated Conversational AI web page.
 
 `https://daemon-plugin.dify.dev/3VYwP********12/convoai-web/index.html`
+
+#### Using API without Web Page
+
+You can also use the API directly without the web page. The API endpoint is:
+
+##### Start Conversation
+
+API Endpoint: `https://qv90***.ai-plugin.io/convoai-start`
+
+| key | value |
+| --- | --- |
+| base_url | The base url of the extension |
+| channel | The channel id of the extension |
+
+Example cURL:
+
+```bash
+curl 'https://qv90***.ai-plugin.io/convoai/convoai-start' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: zh,en;q=0.9,zh-CN;q=0.8' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  --data-raw '{"base_url":"https://qv90***.ai-plugin.io","channel":"jh0y8fgk7"}'
+```
+
+##### Stop Conversation
+
+API Endpoint: `https://qv90***.ai-plugin.io/convoai-stop`
+
+| key | value |
+| --- | --- |
+| agent_id | The agent id of the extension |
+
+Example cURL:
+
+```bash
+curl 'https://qv90***.ai-plugin.io/convoai/convoai-stop' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: zh,en;q=0.9,zh-CN;q=0.8' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  --data-raw '{"agent_id":"1NT29X0ZX0JYPJ96CCL8F4Y4VUEGR566"}'
+```
