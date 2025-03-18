@@ -1,7 +1,7 @@
 ## Agora Conversational AI
 
 **Author:** plutoless
-**Version:** 0.0.3
+**Version:** 0.0.4
 **Type:** extension
 
 ### Description
@@ -10,19 +10,29 @@
 
 This extension provides an endpoint to make Dify agents work with Agora Conversational AI. You can easily turn your Dify agents into voice assistant by using this extension.
 
+#### Prerequisites
+
+- **Agora Account**
+    You need an Agora account to use the Agora Conversational AI service. You can sign up for a free account at [Agora](https://sso.agora.io/en/signup/).
+- **Agora App ID / App Certificate / RESTful Customer ID / RESTful Customer Secret**
+    You need to create an Agora project and get the App ID, App Certificate, RESTful Customer ID and RESTful Customer Secret from [Agora Console](https://console.agora.io/v2).
+- **TTS Vendor Account**
+    You need an account for the TTS vendor you choose. The TTS vendor provides the voice synthesis service for the voice assistant. 
+
 #### Configuration
 
 - **APP**
     The Dify App to turn into voice assistant, choose one from your agent library.
 - **Agora App ID**
-    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/). Note to enable the Agora Conversational AI service in the Agora Console.
+    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2). Note to enable the Agora Conversational AI service in the Agora Console.
 - **Agora RESTful Customer ID**
-    The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/).
+    The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
 - **Agora RESTful Customer Secret**
-    The Agora RESTful Customer Secret to use for RTC service. Get it from [Agora Console](https://console.agora.io/).
+    The Agora RESTful Customer Secret to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
 - **TTS Vendor**
     The TTS vendor to use for voice synthesis. Choose one from the list below.
   - **Azure**
+  - **ElevenLabs**
 - **TTS Vendor Params**
     The parameters for the TTS vendor. The parameters are different for each vendor, please refer to the vendor's documentation for more information.
   - **Azure**
@@ -35,12 +45,22 @@ This extension provides an endpoint to make Dify agents work with Agora Conversa
     }
     ```
 
+  - **ElevenLabs**
+
+    ```json
+    {
+        "key": "<your api key>",
+        "model_id": "eleven_flash_v2_5",
+        "voice_id": "pNInz6obpgDQGcFmaJgB"
+    }
+    ```
+
 - **Greeting Message**
     The message to greet the user when the conversation starts.
 - **Failure Message**
     The message to tell the user when the conversation fails.
 - **Agora App Certificate**
-    The Agora App Certificate to use for RTC service. Get it from [Agora Console](https://console.agora.io/). Only needed when security token is enabled for your Agora project.
+    The Agora App Certificate to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2). Only needed when security token is enabled for your Agora project.
 - **API Key**
     The API Key to protect your Dify endpoint.
 
@@ -48,13 +68,13 @@ This extension provides an endpoint to make Dify agents work with Agora Conversa
 
 Once you finish the configuration, in the endpoint you may find the api endpoint like following:
 
-`https://daemon-plugin.dify.dev/3VYwP********12/convoai-web/<file>`
+`https://qv90***.ai-plugin.io/convoai-web/<file>`
 
 Replace `<file>` with `index.html`,
 
 Then you may navigate to following url to access the integrated Conversational AI web page.
 
-`https://daemon-plugin.dify.dev/3VYwP********12/convoai-web/index.html`
+`https://qv90***.ai-plugin.io/convoai-web/index.html`
 
 #### Using API without Web Page
 
