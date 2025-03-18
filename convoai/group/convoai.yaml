@@ -48,6 +48,11 @@ settings:
       zh_Hans: TTS 供应商
       pt_BR: TTS tts_vendor
     options:
+      - value: elevenlabs
+        label:
+          en_US: ElevenLabs
+          zh_Hans: ElevenLabs
+          pt_BR: ElevenLabs
       - value: microsoft
         label:
           en_US: Azure

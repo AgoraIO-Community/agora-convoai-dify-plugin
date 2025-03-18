@@ -9,10 +9,12 @@ import { Loader2 } from "lucide-react"
 import { setAgentConnected } from "./store/reducers/global"
 import { apiStartService, apiStopService } from "./common/request"
 import { base_url } from "./common/constant"
-import MicrophoneBlock from "./components/ui/Microphone"
+import MicrophoneBlock from "./components/ui/microphone"
 import { IRtcUser, IUserTracks } from "./manager/rtc/types"
 import { IMicrophoneAudioTrack } from "agora-rtc-sdk-ng"
 import RemoteAudio from "./components/ui/remote-audio"
+import { toast } from "sonner"
+import { AxiosError } from "axios"
 
 export default function CardWithForm() {
   const dispatch = useAppDispatch()
@@ -57,15 +59,34 @@ export default function CardWithForm() {
   const onClick = async () => {
     setLoading(true)
     if (!agentConnected) {
-      await Promise.all([
-        joinRTC(),
-        startAgent(),
-      ])
+      try {
+        await Promise.all([
+          joinRTC(),
+          startAgent(),
+        ])
+      } catch (error:unknown) {
+        setLoading(false)
+        if (error instanceof AxiosError)
+          toast.error(`Agent start request failed: ${error.response?.data?.message}`)
+        else
+          toast.error(`Failed to start agent: ${error}`)
+        return
+      }
     } else {
-      await Promise.all([
-        leaveRTC(),
-        stopAgent(),
-      ])
+      try {
+        await Promise.all([
+          leaveRTC(),
+          stopAgent(),
+        ])
+      } catch (error:unknown) {
+        dispatch(setAgentConnected(!agentConnected))
+        setLoading(false)
+        if (error instanceof AxiosError)
+          toast.error(`Agent stop request failed: ${error.response?.data?.message}`)
+        else
+          toast.error(`Failed to stop agent: ${error}`)
+        return
+      }
     }
     dispatch(setAgentConnected(!agentConnected))
     setLoading(false)
