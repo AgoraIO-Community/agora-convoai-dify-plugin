@@ -67,7 +67,10 @@ export default function CardWithForm() {
       } catch (error:unknown) {
         setLoading(false)
         if (error instanceof AxiosError)
-          toast.error(`Agent start request failed: ${error.response?.data?.message}`)
+          if (error.response?.data?.detail)
+            toast.error(`Agent start request failed: ${error.response?.data?.detail}`)
+          else
+            toast.error(`Agent start request failed: ${error}`)
         else
           toast.error(`Failed to start agent: ${error}`)
         return
