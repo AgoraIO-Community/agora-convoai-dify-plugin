@@ -1,34 +1,34 @@
 ## Agora Conversational AI
 
 **Author:** plutoless
-**Version:** 0.0.4
+**Version:** 0.0.5
 **Type:** extension
 
 ### Description
 
 #### Overview
 
-This extension provides an endpoint to make Dify agents work with Agora Conversational AI. You can easily turn your Dify agents into voice assistant by using this extension.
+This extension provides an endpoint to make Dify agents work with Agora’s Conversational AI Engine to easily turn your Dify agents into voice assistants.
 
 #### Prerequisites
 
 - **Agora Account**
     You need an Agora account to use the Agora Conversational AI service. You can sign up for a free account at [Agora](https://sso.agora.io/en/signup/).
 - **Agora App ID / App Certificate / RESTful Customer ID / RESTful Customer Secret**
-    You need to create an Agora project and get the App ID, App Certificate, RESTful Customer ID and RESTful Customer Secret from [Agora Console](https://console.agora.io/v2).
+    You need to create an Agora project and get the App ID, App Certificate, RESTful Customer ID and RESTful Customer Secret from [Agora Console](https://console.agora.io/v2). Note to enable the Agora Conversational AI service in the Agora Console.
 - **TTS Vendor Account**
     You need an account for the TTS vendor you choose. The TTS vendor provides the voice synthesis service for the voice assistant. 
 
 #### Configuration
 
 - **APP**
-    The Dify App to turn into voice assistant, choose one from your agent library.
+    To turn a Dify agent into a voice assistant, choose one from your agent library.
 - **Agora App ID**
-    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2). Note to enable the Agora Conversational AI service in the Agora Console.
+    In the [Agora Console](https://console.agora.io/v2), get your Agora App ID and enable the Conversational AI Engine service.
 - **Agora RESTful Customer ID**
-    The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
+   In the [Agora Console](https://console.agora.io/v2), get the Agora RESTful Customer ID.
 - **Agora RESTful Customer Secret**
-    The Agora RESTful Customer Secret to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
+   In the [Agora Console](https://console.agora.io/v2), get the Agora RESTful Customer Secret.
 - **TTS Vendor**
     The TTS vendor to use for voice synthesis. Choose one from the list below.
   - **Azure**
