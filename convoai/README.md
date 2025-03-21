@@ -1,7 +1,7 @@
 ## Agora Conversational AI
 
 **Author:** plutoless
-**Version:** 0.0.5
+**Version:** 0.0.6
 **Type:** extension
 
 ### Description
@@ -66,13 +66,13 @@ This extension provides an endpoint to make Dify agents work with Agora’s Conv
 
 #### Usage
 
-Once you finish the configuration, in the endpoint you may find the api endpoint like following:
+Once you finish the configuration, you'll fnd the APl in the endpoint as follows:
 
 `https://qv90***.ai-plugin.io/convoai-web/<file>`
 
 Replace `<file>` with `index.html`,
 
-Then you may navigate to following url to access the integrated Conversational AI web page.
+Then you may navigate to the following URL to access the integrated Conversational Al web page.
 
 `https://qv90***.ai-plugin.io/convoai-web/index.html`
 

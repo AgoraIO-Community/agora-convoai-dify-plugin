@@ -1,4 +1,4 @@
-version: 0.0.5
+version: 0.0.6
 type: plugin
 author: plutoless
 name: convoai
@@ -8,10 +8,10 @@ label:
   zh_Hans: "Agora Conversational AI"
   pt_BR: "Agora Conversational AI"
 description:
-  en_US: "Agora Conversational AI is a conversational AI platform that enables developers to build voice assistant powered by Dify Agent."
-  ja_JP: "Agora Conversational AI は、Dify Agent によって駆動される音声アシスタントを構築することができる会話型 AI プラットフォームです。"
-  zh_Hans: "Agora Conversational AI 是一个会话式 AI 平台，使开发人员能够构建由 Dify Agent 提供支持的语音助手。"
-  pt_BR: "Agora Conversational AI é uma plataforma de IA conversacional que permite aos desenvolvedores construir assistentes de voz alimentados pelo Dify Agent."
+  en_US: "The Agora Conversational AI extension enables developers to build voice assistants powered by Dify Agent."
+  ja_JP: "Agora会話型AI拡張機能は、開発者がDify Agentを活用して高機能な音声アシスタントを構築できるようにします。"
+  zh_Hans: "Agora 会话式 AI 插件让开发者能够借助 Dify Agent 构建功能强大的语音助手。"
+  pt_BR: "A extensão de IA Conversacional da Agora permite que desenvolvedores criem assistentes de voz poderosos com o suporte do Dify Agent."
 icon: icon.svg
 resource:
   memory: 268435456
@@ -24,7 +24,7 @@ plugins:
   endpoints:
     - group/convoai.yaml
 meta:
-  version: 0.0.5
+  version: 0.0.6
   arch:
     - amd64
     - arm64

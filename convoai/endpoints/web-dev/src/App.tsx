@@ -87,7 +87,12 @@ export default function CardWithForm() {
         dispatch(setAgentConnected(!agentConnected))
         setLoading(false)
         if (error instanceof AxiosError)
-          toast.error(`Agent stop request failed: ${error.response?.data?.message}`)
+          if (error.response?.data?.detail)
+            toast.error(`Agent stop request failed: ${error.response?.data?.detail}`)
+          else if (error.response?.data?.message)
+            toast.error(`Agent stop request failed: ${error.response?.data?.message}`)
+          else
+            toast.error(`Agent stop request failed: ${error}`)
         else
           toast.error(`Failed to stop agent: ${error}`)
         return
