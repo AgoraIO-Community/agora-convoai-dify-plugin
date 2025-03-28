@@ -1,7 +1,7 @@
 ## Agora Conversational AI
 
 **Author:** plutoless
-**Version:** 0.0.6
+**Version:** 0.0.7
 **Type:** extension
 
 ### Description

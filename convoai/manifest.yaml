@@ -1,6 +1,6 @@
-version: 0.0.6
+version: 0.0.7
 type: plugin
-author: plutoless
+author: QZ
 name: convoai
 label:
   en_US: "Agora Conversational AI"
@@ -24,7 +24,7 @@ plugins:
   endpoints:
     - group/convoai.yaml
 meta:
-  version: 0.0.6
+  version: 0.0.7
   arch:
     - amd64
     - arm64
