@@ -1,6 +1,6 @@
 version: 0.0.7
 type: plugin
-author: QZ
+author: qz
 name: convoai
 label:
   en_US: "Agora Conversational AI"
