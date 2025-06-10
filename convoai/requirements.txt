@@ -1,3 +1,4 @@
-dify_plugin==0.0.1b65
+dify_plugin==0.0.1b76
 agora-token-builder
-gevent~=24.2.1
+requests~=2.32.3
+gevent~=24.11.1

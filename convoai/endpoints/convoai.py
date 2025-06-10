@@ -90,6 +90,8 @@ class ConvoAI(Endpoint):
 
         api_key = settings.get("api_key") or ""
 
+        asr_language = settings.get("asr_language") or "en-US"
+
         tts_vendor = settings.get("tts_vendor")
         tts_params = json.loads(settings.get("tts_params"))
 
@@ -150,7 +152,7 @@ class ConvoAI(Endpoint):
                 },
                 "asr": {
                     "vendor": "microsoft",
-                    "language": "zh-CN"
+                    "language": asr_language
                 },
                 "parameters": {
                     "enable_flexible": True

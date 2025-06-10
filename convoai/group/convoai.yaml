@@ -40,6 +40,29 @@ settings:
       en_US: This value is used to authenticate your Agora RESTful API
       zh_Hans: 这个值用于鉴权你的 Agora RESTful API
       pt_BR: This value is used to authenticate your Agora RESTful API
+  - name: asr_language
+    type: select
+    required: true
+    label:
+      en_US: ASR Language
+      zh_Hans: ASR 语言
+      pt_BR: ASR Language
+    options:
+      - value: en-US
+        label:
+          en_US: English (US)
+          zh_Hans: 英语 (美国)
+          pt_BR: Inglês (EUA)
+      - value: zh-CN
+        label:
+          en_US: Chinese (Simplified)
+          zh_Hans: 中文 (简体)
+          pt_BR: Chinês (Simplificado)
+      - value: ja-JP
+        label:
+          en_US: Japanese
+          zh_Hans: 日语
+          pt_BR: Japonês
   - name: tts_vendor
     type: select
     required: true

@@ -1,7 +1,7 @@
 ## Agora Conversational AI
 
-**Author:** plutoless
-**Version:** 0.0.7
+**Author:** qz
+**Version:** 0.0.8
 **Type:** extension
 
 ### Description
@@ -19,16 +19,29 @@ This extension provides an endpoint to make Dify agents work with Agora’s Conv
 - **TTS Vendor Account**
     You need an account for the TTS vendor you choose. The TTS vendor provides the voice synthesis service for the voice assistant. 
 
+#### Pre-requisites
+
+- Agora account - Get it from [Agora Console](https://sso.agora.io/en/signup/).
+- Agora App ID / App Certificate / RESTful Customer ID / RESTful Customer Secret - Get it from [Agora Console](https://console.agora.io/v2), and make sure the "Converstional AI Engine" service has been activated on Agora Console.
+- TTS Vendor API Key - From [Microsoft Azure](https://portal.azure.com/) or [11labs](https://elevenlabs.io/app/settings/api-keys).
+
+> Note: Currently this extension is not available to use with Shengwang account. If you are from Mainland China, please make sure you register an account from Agora.
+
 #### Configuration
 
 - **APP**
     To turn a Dify agent into a voice assistant, choose one from your agent library.
 - **Agora App ID**
-    In the [Agora Console](https://console.agora.io/v2), get your Agora App ID and enable the Conversational AI Engine service.
+    The Agora App ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2). Note to enable the Agora Conversational AI service in the Agora Console.
 - **Agora RESTful Customer ID**
-   In the [Agora Console](https://console.agora.io/v2), get the Agora RESTful Customer ID.
+    The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
 - **Agora RESTful Customer Secret**
-   In the [Agora Console](https://console.agora.io/v2), get the Agora RESTful Customer Secret.
+    The Agora RESTful Customer Secret to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
+- **ASR Language**
+    The language of the ASR (Automatic Speech Recognition) service. Choose one from the list below.
+  - **English** (en-US)
+  - **Chinese** (zh-CN)
+  - **Japanese** (ja-JP)
 - **TTS Vendor**
     The TTS vendor to use for voice synthesis. Choose one from the list below.
   - **Azure**
@@ -45,11 +58,11 @@ This extension provides an endpoint to make Dify agents work with Agora’s Conv
     }
     ```
 
-  - **ElevenLabs**
+  - **11labs**
 
     ```json
     {
-        "key": "<your api key>",
+        "api_key": "<your api key>",
         "model_id": "eleven_flash_v2_5",
         "voice_id": "pNInz6obpgDQGcFmaJgB"
     }
