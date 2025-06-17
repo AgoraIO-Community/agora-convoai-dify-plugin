@@ -69,6 +69,37 @@ export const useMultibandTrackVolume = (
   return frequencyBands
 }
 
+
+
+export const useAutoScroll = (ref: React.RefObject<HTMLElement | null>) => {
+  const callback: MutationCallback = (mutationList, observer) => {
+    mutationList.forEach((mutation) => {
+      switch (mutation.type) {
+        case "childList":
+          if (!ref.current) {
+            return;
+          }
+          ref.current.scrollTop = ref.current.scrollHeight;
+          break;
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (!ref.current) {
+      return;
+    }
+    const observer = new MutationObserver(callback);
+    observer.observe(ref.current, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
+};
 // export const useAutoScroll = (ref: React.RefObject<HTMLElement | null>) => {
 //   const callback: MutationCallback = (mutationList, observer) => {
 //     mutationList.forEach((mutation) => {
