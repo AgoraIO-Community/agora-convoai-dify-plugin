@@ -20,8 +20,3 @@ export function useIsMobileScreen(breakpoint?: string) {
 
   return isMobileScreen;
 }
-
-export function decodeStreamMessage(stream: Uint8Array) {
-  const decoder = new TextDecoder()
-  return decoder.decode(stream)
-}

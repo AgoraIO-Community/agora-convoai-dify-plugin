@@ -15,7 +15,6 @@ import { IMicrophoneAudioTrack } from "agora-rtc-sdk-ng"
 import RemoteAudio from "./components/ui/remote-audio"
 import { toast } from "sonner"
 import { AxiosError } from "axios"
-import MessageList from "./components/ui/message-list"
 
 export default function CardWithForm() {
   const dispatch = useAppDispatch()
@@ -65,7 +64,7 @@ export default function CardWithForm() {
           joinRTC(),
           startAgent(),
         ])
-      } catch (error: unknown) {
+      } catch (error:unknown) {
         setLoading(false)
         if (error instanceof AxiosError)
           if (error.response?.data?.detail)
@@ -84,7 +83,7 @@ export default function CardWithForm() {
           leaveRTC(),
           stopAgent(),
         ])
-      } catch (error: unknown) {
+      } catch (error:unknown) {
         dispatch(setAgentConnected(!agentConnected))
         setLoading(false)
         if (error instanceof AxiosError)
@@ -123,9 +122,6 @@ export default function CardWithForm() {
         <CardDescription>Talk to Dify, with your voice.</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="mb-4">
-          <MessageList />
-        </div>
         <div className="grid w-full items-center gap-4">
           <div className="flex flex-col space-y-1.5">
             <Label htmlFor="name">Agent Channel</Label>

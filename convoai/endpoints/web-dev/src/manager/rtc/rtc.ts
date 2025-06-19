@@ -11,7 +11,6 @@ import { AGEventEmitter } from "../events";
 import { RtcEvents, IUserTracks } from "./types";
 import { VideoSourceType } from "@/common/constant";
 import { apiGenAgoraData } from "@/common/request";
-import { EMessageEngineMode, MessageEngine } from "@/manager/message";
 
 const TIMEOUT_MS = 5000; // Timeout for incomplete messages
 
@@ -29,7 +28,6 @@ export class RtcManager extends AGEventEmitter<RtcEvents> {
   appId: string | null = null;
   token: string | null = null;
   userId: number | null = null;
-  messageEngine: MessageEngine | null = null;
 
   constructor() {
     super();
@@ -46,22 +44,6 @@ export class RtcManager extends AGEventEmitter<RtcEvents> {
       this.appId = app_id;
       this.token = token;
       this.userId = userId;
-
-      this.messageEngine = new MessageEngine(
-        this.client,
-        EMessageEngineMode.AUTO,
-        (chatHistory) => {
-          // 控制台打印 chatHistory
-          console.log("chatHistory", chatHistory);
-          // 发送 chatHistory 到 web 页面, 建议使用Redux或者其他状态管理工具
-          // 这里使用 window.postMessage 发送消息作为示例
-          window.postMessage({
-            type: "message",
-            chatHistory,
-          });
-        }
-      );
-
       await this.client?.join(app_id, channel, token, userId);
       this._joined = true;
     }
@@ -77,7 +59,7 @@ export class RtcManager extends AGEventEmitter<RtcEvents> {
     this.emit("localTracksChanged", this.localTracks);
   }
 
-  async createMicrophoneAudioTrack(selectedMicrophone: TDeviceSelectItem) {
+  async createMicrophoneAudioTrack(selectedMicrophone:TDeviceSelectItem) {
     try {
       const audioTrack = await AgoraRTC.createMicrophoneAudioTrack({
         microphoneId: selectedMicrophone.deviceId,
@@ -143,7 +125,6 @@ export class RtcManager extends AGEventEmitter<RtcEvents> {
   async destroy() {
     this.localTracks?.audioTrack?.close();
     this.localTracks?.videoTrack?.close();
-    this.messageEngine?.cleanup();
     if (this._joined) {
       await this.client?.leave();
     }
