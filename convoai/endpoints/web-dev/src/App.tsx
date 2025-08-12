@@ -53,7 +53,7 @@ export default function CardWithForm() {
 
   const stopAgent = async () => {
     await apiStopService(agentId)
-    setAgentId("")
+    // setAgentId("")
   }
 
   const onClick = async () => {
@@ -119,7 +119,16 @@ export default function CardWithForm() {
     <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Dify & Agora Conversational AI Agent</CardTitle>
-        <CardDescription>Talk to Dify, with your voice.</CardDescription>
+        <CardDescription>
+          <>
+          <div className="text-sm text-muted-foreground">
+            Talk to Dify, with your voice.
+          </div>
+          <div className="text-xs text-muted-foreground">
+            {agentId || "Not connected"}
+          </div>
+          </>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid w-full items-center gap-4">

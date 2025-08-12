@@ -37,17 +37,26 @@ This extension provides an endpoint to make Dify agents work with Agora’s Conv
     The Agora RESTful Customer ID to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
 - **Agora RESTful Customer Secret**
     The Agora RESTful Customer Secret to use for RTC service. Get it from [Agora Console](https://console.agora.io/v2).
+- **ASR Vendor**
+    The ASR vendor to use for speech recognition. Choose one from the list below.
+  - **Ares**
+  - **Azure**
+
 - **ASR Language**
-    The language of the ASR (Automatic Speech Recognition) service. Choose one from the list below.
-  - **English** (en-US)
-  - **Chinese** (zh-CN)
-  - **Japanese** (ja-JP)
+    The BCP-47 language tag identifying the primary language used for agent interaction.
+- **ASR Params**
+    The parameters for the ASR vendor. The parameters are different for each vendor, please refer to [the documentation](https://docs.agora.io/en/conversational-ai/models/asr/overview) for more information.
+
 - **TTS Vendor**
     The TTS vendor to use for voice synthesis. Choose one from the list below.
   - **Azure**
   - **ElevenLabs**
+  - **Cartesia**
+  - **OpenAI**
+  - **Humeai**
+
 - **TTS Vendor Params**
-    The parameters for the TTS vendor. The parameters are different for each vendor, please refer to the vendor's documentation for more information.
+    The parameters for the TTS vendor. The parameters are different for each vendor, please refer to [the documentation](https://docs.agora.io/en/conversational-ai/models/tts/overview) for more information.
   - **Azure**
 
     ```json

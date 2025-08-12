@@ -93,7 +93,11 @@ class ConvoAI(Endpoint):
         asr_language = settings.get("asr_language") or "en-US"
 
         tts_vendor = settings.get("tts_vendor")
-        tts_params = json.loads(settings.get("tts_params"))
+        tts_params = json.loads(settings.get("tts_params", "{}"))
+        asr_vendor = settings.get("asr_vendor")
+        asr_language = settings.get("asr_language") or "en-US"
+        asr_params_str = settings.get("asr_params", None)
+        asr_params = json.loads(asr_params_str) if asr_params_str else None
 
         # tts_vendor = "bytedance"
         # tts_params = {
@@ -151,7 +155,8 @@ class ConvoAI(Endpoint):
                     "params": tts_params
                 },
                 "asr": {
-                    "vendor": "microsoft",
+                    "vendor": asr_vendor,
+                    "params": asr_params,
                     "language": asr_language
                 },
                 "parameters": {
@@ -159,6 +164,9 @@ class ConvoAI(Endpoint):
                 }
             }
         }
+
+        # print("Data to be sent:", json.dumps(data, indent=2))
+
         url = f"https://api.agora.io/api/conversational-ai-agent/v2/projects/{agora_app_id}/join"
 
         # raise Exception(json.dumps(data))
