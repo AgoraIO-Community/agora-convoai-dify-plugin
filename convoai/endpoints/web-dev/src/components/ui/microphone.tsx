@@ -93,7 +93,7 @@ export function CommonDeviceWrapper(props: {
   isActive: boolean
   select?: React.ReactNode
 }) {
-  const { title, Icon, onIconClick, isActive, select, children } = props
+  const { Icon, onIconClick, isActive, select, children } = props
 
   return (
     <div className="flex flex-col">

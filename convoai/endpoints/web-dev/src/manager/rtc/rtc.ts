@@ -4,7 +4,7 @@ import AgoraRTC, {
   IAgoraRTCClient,
   IMicrophoneAudioTrack,
   IRemoteAudioTrack,
-  UID,
+  // UID,
 } from "agora-rtc-sdk-ng";
 import { EMessageDataType, EMessageType, IChatItem, TDeviceSelectItem } from "@/types";
 import { AGEventEmitter } from "../events";
@@ -157,9 +157,9 @@ export class RtcManager extends AGEventEmitter<RtcEvents> {
         videoTrack: user.videoTrack,
       });
     });
-    this.client.on("stream-message", (uid: UID, stream: any) => {
+    // this.client.on("stream-message", (uid: UID, stream: any) => {
       // this._parseData(stream);
-    });
+    // });
   }
 
   // private _parseData(data: any): ITextItem | void {
