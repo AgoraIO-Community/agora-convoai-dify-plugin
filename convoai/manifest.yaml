@@ -1,4 +1,4 @@
-version: 0.0.10
+version: 0.0.11
 type: plugin
 author: plutoless
 name: convoai
@@ -24,7 +24,7 @@ plugins:
   endpoints:
     - group/convoai.yaml
 meta:
-  version: 0.0.10
+  version: 0.0.11
   arch:
     - amd64
     - arm64
