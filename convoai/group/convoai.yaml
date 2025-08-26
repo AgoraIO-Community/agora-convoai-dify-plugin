@@ -99,11 +99,11 @@ settings:
           en_US: Azure
           zh_Hans: Azure
           pt_BR: Azure
-      - value: cartesian
+      - value: cartesia
         label:
-          en_US: Cartesian
-          zh_Hans: Cartesian
-          pt_BR: Cartesian
+          en_US: Cartesia
+          zh_Hans: Cartesia
+          pt_BR: Cartesia
       - value: openai
         label:
           en_US: OpenAI
